@@ -38,8 +38,7 @@ jobs:
       CCACHE_HARDLINK: "true"
       CCACHE_DIR: /home/runner/.ccache  
   CCACHE_MAXSIZE: 9G
-  
-    steps:
+   steps:
       - name: Maximize build space
         uses: easimon/maximize-build-space@master
         with:
