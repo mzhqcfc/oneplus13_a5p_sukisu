@@ -42,17 +42,12 @@ jobs:
       - name: Maximize build space
         uses: easimon/maximize-build-space@master
         with:
-          root-reserve-mb: 10240
-          temp-reserve-mb: 1024
+          root-reserve-mb: 8192
+          temp-reserve-mb: 2048
           remove-dotnet: 'true'
           remove-android: 'true'
           remove-haskell: 'true'
           remove-codeql: 'true'
-      - name: Check Disk Space
-        run: |
-         echo "=== 空间使用情况 ==="
-         df -h / /home/runner/work
-         echo "CCACHE目录大小: $(du -sh ${{ env.CCACHE_DIR }} || true)
           
       - name: Configure Git
         run: |
